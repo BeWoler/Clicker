@@ -1,6 +1,10 @@
 html {
-  font-family: "Press Start 2P";
   font-size: 2rem;
+}
+
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./font/PressStart2P-Regular.ttf");
 }
 
 body {
@@ -68,4 +72,5 @@ main {
 #display,
 #counter {
   height: 32px;
+  font-family: "Press Start 2P";
 }
