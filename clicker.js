@@ -3,6 +3,7 @@ let clicks = 0;
 const TIMEOUT = 5000;
 
 const display = document.querySelector("#display");
+const displayCounter = document.querySelector('#display__counter')
 const button = document.querySelector("#button");
 const counter = document.querySelector("#counter");
 
@@ -22,6 +23,7 @@ function start() {
   const timeout = setTimeout(() => {
     button.onclick = null;
     display.textContent = "Game Over";
+    displayCounter.textContent = `You clicked ${--clicks} times!`
 
     clearInterval(interval);
     clearTimeout(timeout);

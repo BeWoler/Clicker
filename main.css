@@ -1,5 +1,6 @@
 html {
   font-size: 2rem;
+  font-family: "Press Start 2P";
 }
 
 @font-face {
@@ -69,8 +70,8 @@ main {
     -6px 0px var(--shadow-color);
 }
 
-#display,
+#display, #display__counter,
 #counter {
   height: 32px;
-  font-family: "Press Start 2P";
+  margin-bottom: 30px;
 }
