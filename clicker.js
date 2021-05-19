@@ -3,9 +3,9 @@ let clicks = 0;
 const TIMEOUT = 5000;
 
 const display = document.querySelector("#display");
-const displayCounter = document.querySelector('#display__counter')
+const displayCounter = document.querySelector("#display__counter");
 const button = document.querySelector("#button");
-const restartBtn = document.querySelector('#button__restart');
+const restartBtn = document.querySelector("#button__restart");
 const counter = document.querySelector("#counter");
 
 button.onclick = start;
@@ -26,7 +26,7 @@ function start() {
     display.textContent = "Game Over";
     displayCounter.textContent = `You clicked ${clicks} times!`;
 
-    restartBtn.style.display = 'block';
+    restartBtn.style.display = "block";
     restartBtn.onclick = restart;
 
     clearInterval(interval);
@@ -35,10 +35,13 @@ function start() {
 }
 
 function restart() {
-  restartBtn.style.display = 'none';
+  restartBtn.style.display = "none";
+
   clicks = 0;
+
   counter.textContent = clicks;
   displayCounter.textContent = null;
+
   start();
 }
 
