@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   display: flex;
@@ -17,6 +18,12 @@ body {
   height: 100vh;
   background-color: #222;
   color: white;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 main {
@@ -125,4 +132,27 @@ main {
 #counter {
   height: 32px;
   margin-bottom: 30px;
+}
+
+.score__board {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+}
+
+.board__title {
+  font-size: .70rem;
+}
+
+.score__list {
+  font-size: .65rem;
+}
+
+.score__items {
+  margin: 0px 0px 15px 0px;
+  border-bottom: 2px solid #747474;
+  padding-bottom: 5px;
+}
+.score__items:last-child {
+  margin: 0;
 }

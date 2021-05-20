@@ -1,4 +1,6 @@
 let clicks = 0;
+let listCounter = 1;
+let listItem;
 
 const TIMEOUT = 5000;
 
@@ -7,6 +9,7 @@ const displayCounter = document.querySelector("#display__counter");
 const button = document.querySelector("#button");
 const restartBtn = document.querySelector("#button__restart");
 const counter = document.querySelector("#counter");
+const scoreList = document.querySelector('.score__list');
 
 button.onclick = start;
 
@@ -29,6 +32,11 @@ function start() {
     restartBtn.style.display = "block";
     restartBtn.onclick = restart;
 
+    listItem = document.createElement('li');
+    listItem.classList.add('score__items');
+    listItem.textContent = `${listCounter++}. ${clicks} clicks`;
+    scoreList.append(listItem);
+
     clearInterval(interval);
     clearTimeout(timeout);
   }, TIMEOUT);
@@ -39,10 +47,11 @@ function restart() {
 
   clicks = 0;
 
+  display.textContent = "Just click!";
   counter.textContent = clicks;
   displayCounter.textContent = null;
 
-  start();
+  button.onclick = start;
 }
 
 function formatTime(ms) {
