@@ -1,6 +1,7 @@
 let clicks = 0;
 let listCounter = 1;
 let listItem;
+let score = 0;
 
 const TIMEOUT = 5000;
 
@@ -9,7 +10,7 @@ const displayCounter = document.querySelector("#display__counter");
 const button = document.querySelector("#button");
 const restartBtn = document.querySelector("#button__restart");
 const counter = document.querySelector("#counter");
-const scoreList = document.querySelector('.score__list');
+const scoreList = document.querySelector(".score__list");
 
 button.onclick = start;
 
@@ -32,9 +33,11 @@ function start() {
     restartBtn.style.display = "block";
     restartBtn.onclick = restart;
 
-    listItem = document.createElement('li');
-    listItem.classList.add('score__items');
-    listItem.textContent = `${listCounter++}. ${clicks} clicks`;
+    localStorage.setItem(++score, `${listCounter++}. ${clicks} clicks`);
+
+    listItem = document.createElement("li");
+    listItem.classList.add("score__items");
+    listItem.textContent = localStorage.getItem(score);
     scoreList.append(listItem);
 
     clearInterval(interval);
